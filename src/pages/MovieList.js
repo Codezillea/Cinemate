@@ -1,4 +1,4 @@
-import { useTitle } from "../hooks/useTitle";
+
 import {Card} from "../components/Card";
 import {useFetch} from "../hooks/useFetch";
 
@@ -9,7 +9,7 @@ export const MovieList = ({apiPath,title}) => {
  
   const {data:movies}=useFetch(apiPath);//here data is the array returned by our custom hook usefetch movies after semicolon with data is our identifier.
   
-  const pageTitle=useTitle(title);
+  
   return (
     <main>
       <section className="max-w-7xl mx-auto py-7">

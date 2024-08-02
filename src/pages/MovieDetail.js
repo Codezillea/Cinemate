@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import Backup from "../assets/images/image_not_found.jpeg";
 import {Button} from "../components/index";
 import { Link } from "react-router-dom";
-import { useTitle } from "../hooks/useTitle";
+
 export const MovieDetail = () => {
   
   const params=useParams();
   const [movie,setMovie]=useState([]);
-  const pageTitle=useTitle(movie.title);
+  
   const image= movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`: Backup;
 
   useEffect( ()=>{
@@ -20,7 +20,7 @@ export const MovieDetail = () => {
     }
     fetchMovie();
     
-  },[]);
+  });
   
 
 
@@ -80,7 +80,7 @@ export const MovieDetail = () => {
 
             <p className="my-4 ">
               <span className="mr-2 font-bold">IMDB Code :</span>
-              <a href={`https://www.imdb.com/title/${movie.imdb_id}`} target="_blank" rel="no-refferer">{movie.imdb_id} </a>
+              <a href={`https://www.imdb.com/title/${movie.imdb_id}`} target="_blank" rel="noreferrer">{movie.imdb_id} </a>  
             </p>
 
             <Link to="/">
